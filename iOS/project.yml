@@ -1,0 +1,75 @@
+name: HearingAidLog
+options:
+  bundleIdPrefix: com.shimondeitel.hearingaidlog
+  deploymentTarget:
+    iOS: "17.0"
+  createIntermediateGroups: true
+  groupSortPosition: top
+settings:
+  base:
+    MARKETING_VERSION: "1.0"
+    CURRENT_PROJECT_VERSION: "1"
+    SWIFT_VERSION: "5.0"
+    DEVELOPMENT_TEAM: "W7Q885Q59C"
+    CODE_SIGN_STYLE: Automatic
+    IPHONEOS_DEPLOYMENT_TARGET: "17.0"
+    TARGETED_DEVICE_FAMILY: "1"
+    ENABLE_USER_SCRIPT_SANDBOXING: "YES"
+targets:
+  HearingAidLog:
+    type: application
+    platform: iOS
+    sources:
+      - path: HearingAidLog
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.shimondeitel.hearingaidlog
+        TARGETED_DEVICE_FAMILY: "1"
+        INFOPLIST_FILE: HearingAidLog/Info.plist
+        ASSETCATALOG_COMPILER_APPICON_NAME: AppIcon
+        ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME: AccentColor
+        ENABLE_PREVIEWS: "YES"
+        GENERATE_INFOPLIST_FILE: "NO"
+  HearingAidLogTests:
+    type: bundle.unit-test
+    platform: iOS
+    sources:
+      - path: HearingAidLogTests
+      - path: HearingAidLog.storekit
+    dependencies:
+      - target: HearingAidLog
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.shimondeitel.hearingaidlog.tests
+        GENERATE_INFOPLIST_FILE: "YES"
+        TARGETED_DEVICE_FAMILY: "1"
+  HearingAidLogUITests:
+    type: bundle.ui-testing
+    platform: iOS
+    sources:
+      - path: HearingAidLogUITests
+    dependencies:
+      - target: HearingAidLog
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.shimondeitel.hearingaidlog.uitests
+        GENERATE_INFOPLIST_FILE: "YES"
+        TARGETED_DEVICE_FAMILY: "1"
+schemes:
+  HearingAidLog:
+    build:
+      targets:
+        HearingAidLog: all
+        HearingAidLogTests: [test]
+        HearingAidLogUITests: [test]
+    run:
+      config: Debug
+      storeKitConfiguration: HearingAidLog.storekit
+    test:
+      config: Debug
+      storeKitConfiguration: HearingAidLog.storekit
+      targets:
+        - HearingAidLogTests
+        - HearingAidLogUITests
+    archive:
+      config: Release

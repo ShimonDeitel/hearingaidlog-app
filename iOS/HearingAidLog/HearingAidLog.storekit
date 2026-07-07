@@ -1,0 +1,29 @@
+{
+  "identifier" : "HearingAidLog",
+  "nonRenewingSubscriptions" : [],
+  "products" : [
+    {
+      "displayPrice" : "3.99",
+      "familyShareable" : false,
+      "internalID" : "hearingaidlog_pro",
+      "localizations" : [
+        {
+          "description" : "Dual-device tracking and cleaning reminder schedule",
+          "displayName" : "Hearing Aid Log Pro",
+          "locale" : "en_US"
+        }
+      ],
+      "productID" : "com.shimondeitel.hearingaidlog.pro",
+      "referenceName" : "Hearing Aid Log Pro",
+      "type" : "NonConsumable"
+    }
+  ],
+  "settings" : {
+    "_storeKitErrors" : []
+  },
+  "subscriptionGroups" : [],
+  "version" : {
+    "major" : 3,
+    "minor" : 0
+  }
+}
